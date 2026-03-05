@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Hairnic - @yield('title', 'Shampoo')</title>
+    <title>Rare Hunt</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <link href="{{ asset('img/favicon.ico') }}" rel="icon">
@@ -28,53 +28,73 @@
         </div>
     </div>
 
+    <!-- NAVBAR -->
     <div class="container-fluid sticky-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+
+                <!-- LOGO -->
                 <a href="{{ url('/') }}" class="navbar-brand">
-                    <h2 class="text-white">Hairnic</h2>
+                    <h2 class="logo-text">Rare hunt</h2>
                 </a>
-                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <!-- MENU -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
-                        <a href="{{ url('/') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
-                        <a href="{{ url('/about') }}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
-                        <a href="{{ url('/product') }}" class="nav-item nav-link {{ request()->is('product') ? 'active' : '' }}">Products</a>
-                        {{-- 
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a href="#" class="dropdown-item">Features</a>
-                                <a href="#" class="dropdown-item">How To Use</a>
-                            </div>
-                        </div> 
-                        --}}
-                        
-                        <a href="{{ url('/contact') }}" class="nav-item nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact</a>
-                    </div>
-                    <x-button type="dark" class="py-2 px-4 d-none d-lg-inline-block">
-                            Shop Now
-                    </x-button>
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a href="{{ url('/') }}"
+                            class="nav-link {{ request()->is('/') ? 'active' : '' }}">
+                            Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/nosotros') }}"
+                            class="nav-link {{ request()->is('about') ? 'active' : '' }}">
+                            Nosotros
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/productos') }}"
+                            class="nav-link {{ request()->is('product') ? 'active' : '' }}">
+                            Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/contacto') }}"
+                            class="nav-link {{ request()->is('contact') ? 'active' : '' }}">
+                            Contacto
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+
             </nav>
         </div>
     </div>
 
     @yield('content')
 
-    <div class="container-fluid bg-white footer">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <h1 class="text-primary">Hairnic</h1>
-                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <!--FOOTER -->
+    <div class="container-fluid footer-simple">
+        <div class="container py-4">
+            <div class="row align-items-center">
+
+                <div class="col-md-6 text-center text-md-start">
+                    <h5 class="footer-logo mb-0">Rare Hunt</h5>
+                    <small>Figuras coleccionables y artículos exclusivos.</small>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <h5 class="mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, NY, USA</p>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="/" class="footer-link">Inicio</a>
+                    <a href="/contacto" class="footer-link">Contacto</a>
                 </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center">
+                <small>© 2026 Rare Hunt</small>
             </div>
         </div>
     </div>

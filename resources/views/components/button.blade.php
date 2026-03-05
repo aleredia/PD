@@ -8,6 +8,7 @@
     $style = match($type) {
         'dark' => 'btn-dark',
         'outline' => 'btn-outline-primary',
+        'custom' => 'btn-custom',
         default => 'btn-primary',
     };
 @endphp
