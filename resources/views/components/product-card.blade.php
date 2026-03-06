@@ -20,8 +20,6 @@
         <p class="product-price">
             ${{ $price }}
         </p>
-
-      
                     <x-button type="custom" class="text-white px-4 py-3 fw-bold shadow-sm" style="background-color:#001f3f;border-radius:50px;border:none;">
                         Ver Más
                     </x-button>
