@@ -73,12 +73,18 @@ img.animated.pulse {
 }
 
 /*** Navbar ***/
+
+.navbar-wrapper{
+    transition:0.3s;
+}
+
+.navbar-wrapper.scrolled{
+    background:#001f3f;
+}
+
 .custom-navbar{
-    background:white;
-    border-radius:30px;
-    margin-top: 20px;
-    padding:6px 20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.06);
+    background:transparent;
+    transition:0.3s;
 }
 
 .logo-text{
@@ -95,7 +101,6 @@ img.animated.pulse {
     padding:4px 6px;
     transition:0.3s;
 }
-
 
 /** PAGINA PRINCIPAL **/
 /*** Hero Header ***/
@@ -272,9 +277,18 @@ img.animated.pulse {
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
+.product-img-container{
+    height:260px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
 .product-img{
-    height:250px;
-    object-fit:cover;
+    height: 260px;
+    width: 100%;
+    object-fit: contain;
 }
 
 .product-price{

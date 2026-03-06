@@ -28,77 +28,100 @@
         </div>
     </div>
 
-    <!-- NAVBAR -->
-    <div class="container-fluid sticky-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+  <!-- NAVBAR -->
+<div class="container-fluid sticky-top navbar-wrapper">
 
-                <!-- LOGO -->
-                <a href="{{ url('/') }}" class="navbar-brand">
-                    <h2 class="logo-text">Rare hunt</h2>
-                </a>
+    <div class="container-fluid px-5">
 
-                <!-- MENU -->
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item">
-                            <a href="{{ url('/') }}"
-                            class="nav-link {{ request()->is('/') ? 'active' : '' }}">
-                            Inicio
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/nosotros') }}"
-                            class="nav-link {{ request()->is('about') ? 'active' : '' }}">
-                            Nosotros
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/productos') }}"
-                            class="nav-link {{ request()->is('product') ? 'active' : '' }}">
-                            Productos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/contacto') }}"
-                            class="nav-link {{ request()->is('contact') ? 'active' : '' }}">
-                            Contacto
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <nav class="navbar navbar-expand-lg py-3 custom-navbar">
 
-            </nav>
-        </div>
+            <a href="{{ route('index') }}" class="navbar-brand">
+                <h2 class="logo-text fw-bold mb-0" style="color: #001f3f;">Rare Hunt</h2>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a href="{{ route('index') }}"
+                           class="nav-link px-3 fw-medium {{ request()->is('/') ? 'fw-bold' : '' }}"
+                           style="color:#001f3f;">
+                           Inicio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('about') }}"
+                           class="nav-link px-3 fw-medium {{ request()->is('nosotros') ? 'fw-bold' : '' }}"
+                           style="color:#001f3f;">
+                           Nosotros
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('product') }}"
+                           class="nav-link px-3 fw-medium {{ request()->is('productos') ? 'fw-bold' : '' }}"
+                           style="color:#001f3f;">
+                           Productos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('contact') }}"
+                           class="nav-link px-3 fw-medium {{ request()->is('contacto') ? 'fw-bold' : '' }}"
+                           style="color:#001f3f;">
+                           Contacto
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+
     </div>
 
+</div>
     @yield('content')
 
     <!--FOOTER -->
-    <div class="container-fluid footer-simple">
-        <div class="container py-4">
-            <div class="row align-items-center">
+   <div class="container-fluid footer-simple bg-white border-top">
+    <div class="container py-5">
+        <div class="row align-items-center g-4">
 
-                <div class="col-md-6 text-center text-md-start">
-                    <h5 class="footer-logo mb-0">Rare Hunt</h5>
-                    <small>Figuras coleccionables y artículos exclusivos.</small>
-                </div>
-
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="/" class="footer-link">Inicio</a>
-                    <a href="/contacto" class="footer-link">Contacto</a>
-                </div>
-
+            <div class="col-md-6 text-center text-md-start">
+                <h5 class="footer-logo mb-1 fw-bold" style="color: #001f3f;">Rare Hunt</h5>
+                <p class="text-muted small mb-0">Figuras coleccionables y artículos exclusivos.</p>
             </div>
 
-            <hr>
-
-            <div class="text-center">
-                <small>© 2026 Rare Hunt</small>
+            <div class="col-md-6 text-center text-md-end">
+                <div class="d-flex justify-content-center justify-content-md-end gap-3">
+                    <a href="{{ route('index') }}" 
+                       class="btn btn-outline-dark px-4 py-2" 
+                       style="border-radius: 50px; font-size: 0.9rem; transition: 0.3s;">
+                       Inicio
+                    </a>
+                    <a href="{{ route('contact') }}" 
+                       class="btn btn-outline-dark px-4 py-2" 
+                       style="border-radius: 50px; font-size: 0.9rem; transition: 0.3s;">
+                       Contacto
+                    </a>
+                </div>
             </div>
+
+        </div>
+
+        <hr class="my-4 opactiy-25">
+
+        <div class="text-center">
+            <small class="text-muted">© 2026 <strong>Rare Hunt</strong>. Todos los derechos reservados.</small>
         </div>
     </div>
-
+</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
@@ -106,5 +129,18 @@
     <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
     <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script>
+window.addEventListener("scroll", function() {
+
+    const navbar = document.querySelector(".navbar-wrapper");
+
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+});
+</script>
 </body>
 </html>
